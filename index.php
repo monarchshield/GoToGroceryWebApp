@@ -20,10 +20,10 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="products.html" class="nav-link px-2 text-white">Products</a></li>
-          <li><a href="orders.html" class="nav-link px-2 text-white">Order</a></li>
-          <li><a href="users.html" class="nav-link px-2 text-white">Users</a></li>
+          <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="products.php" class="nav-link px-2 text-white">Products</a></li>
+          <li><a href="orders.php" class="nav-link px-2 text-white">Order</a></li>
+          <li><a href="users.php" class="nav-link px-2 text-white">Users</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -43,25 +43,25 @@
 			<h5> Top grossing items </h5>
 			<canvas id="myChart" style="width:100%;"></canvas>
 		</div>
-		
+
 		<div class="col-md-6">
 			<h5> User signups per month</h5>
-			<canvas id="UserSignups" style="width:100%;"></canvas> 
+			<canvas id="UserSignups" style="width:100%;"></canvas>
 		</div>
 	</div>
-	
+
 	<div class="row" style="padding-top:5%;">
 		<div class="col-md-6">
 			<h5> Gross income per month </h5>
-			<canvas id="MonthlySales" style="width:100%;"></canvas> 
+			<canvas id="MonthlySales" style="width:100%;"></canvas>
 		</div>
-		
+
 		<div class="col-md-6">
 			<h5> Orders Per Month</h5>
-			<canvas id="OrdersMonthly" style="width:100%;"></canvas> 
+			<canvas id="OrdersMonthly" style="width:100%;"></canvas>
 		</div>
-		
-		
+
+
 	</div>
 </div>
 

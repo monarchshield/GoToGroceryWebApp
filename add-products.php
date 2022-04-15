@@ -16,10 +16,10 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.html" class="nav-link px-2 text-white ">Home</a></li>
-          <li><a href="products.html" class="nav-link px-2 text-secondary">Products</a></li>
-          <li><a href="orders.html" class="nav-link px-2 text-white">Order</a></li>
-          <li><a href="users.html" class="nav-link px-2 text-white">Users</a></li>
+          <li><a href="index.php" class="nav-link px-2 text-white ">Home</a></li>
+          <li><a href="products.php" class="nav-link px-2 text-secondary">Products</a></li>
+          <li><a href="orders.php" class="nav-link px-2 text-white">Order</a></li>
+          <li><a href="users.php" class="nav-link px-2 text-white">Users</a></li>
         </ul>
 
 
@@ -46,7 +46,7 @@
           <label for="inputPassword4">Price</label>
           <input type="pname" class="form-control" id="p_price" placeholder="Enter price product">
         </div>
-      
+
       <div class="form-group col-md-4">
           <label for="inputPassword4">Stock</label>
           <input type="pprice" class="form-control" id="phone_number" placeholder="Enter Stock Number">
@@ -79,20 +79,20 @@
             <li><a class="dropdown-item" href="#">each</a></li>
           </ul>
         </div>
-        
-        
-      
+
+
+
       <div class="form-group col-md-4 " >
           <label for="inputPassword4">Expiry</label>
           <input style="height:150px"type="address" class="form-control" id="pexpiry" placeholder="Enter expiry product">
         </div>
-      
+
       </div>
       <button type="submit" class="btn btn-primary ">Confirm</button>
       <button type="reset" class="btn btn-primary ">Cancel</button>
     </form>
-      
-      
+
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

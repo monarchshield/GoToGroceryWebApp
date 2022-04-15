@@ -28,10 +28,10 @@
           </svg>
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="products.html" class="nav-link px-2 text-white">Products</a></li>
-          <li><a href="orders.html" class="nav-link px-2 text-white">Order</a></li>
-          <li><a href="users.html" class="nav-link px-2 text-white">Users</a></li>
+          <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="products.php" class="nav-link px-2 text-white">Products</a></li>
+          <li><a href="orders.php" class="nav-link px-2 text-white">Order</a></li>
+          <li><a href="users.php" class="nav-link px-2 text-white">Users</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -65,11 +65,11 @@
             </div>
           </div>
           <div class="col" style="padding: 0%;">
-            <div style="padding-bottom: 2%;">Address</div> 
+            <div style="padding-bottom: 2%;">Address</div>
             <input class="form-control" type="text" placeholder="Enter Address" style="height:12%; ">
           </div>
           <div class="col" style="padding: 0%;">
-            <div style="padding: 2% 0%;">Additional Information</div> 
+            <div style="padding: 2% 0%;">Additional Information</div>
             <input class="form-control" type="text" placeholder="Note" style="height:30%">
           </div>
         </div>
@@ -87,14 +87,14 @@
                 <a class="dropdown-item">Egg</a>
                 <a class="dropdown-item">Tomato</a>
               </div>
-            </div> 
+            </div>
             <div class="col-sm-2" style="padding: 0%;">
               <button type="button" class="btn btn-primary btn-group-sm">Add</button>
 
             </div>
-  
+
           </div>
-     
+
           <div class=" col py-3" style="padding: 0px;">
             <table class="table table-striped" style="width:100%">
               <thead>
@@ -111,7 +111,7 @@
                   <td>Lettuce</td>
                   <td>$3.5</td>
                   <td>
-                    <button type="button" class="btn btn-dark" style="                          
+                    <button type="button" class="btn btn-dark" style="
                         width: 20px;
                         height: 20px;
                         font: 20px/0 Arial,sans-serif;
@@ -122,7 +122,7 @@
                       -
                     </button>
                     <span style="padding: 0px 5px;">1</span>
-                    <button type="button" class="btn btn-dark" style="                          
+                    <button type="button" class="btn btn-dark" style="
                       width: 20px;
                       height: 20px;
                       font: 20px/0 Arial,sans-serif;
@@ -138,7 +138,7 @@
                   <td>Egg</td>
                   <td>$0.5</td>
                   <td>
-                    <button type="button" class="btn btn-dark" style="                          
+                    <button type="button" class="btn btn-dark" style="
                         width: 20px;
                         height: 20px;
                         font: 20px/0 Arial,sans-serif;
@@ -149,7 +149,7 @@
                       -
                     </button>
                     <span style="padding: 0px 5px;">6</span>
-                    <button type="button" class="btn btn-dark" style="                          
+                    <button type="button" class="btn btn-dark" style="
                       width: 20px;
                       height: 20px;
                       font: 20px/0 Arial,sans-serif;
@@ -165,7 +165,7 @@
                   <td>Tomato</td>
                   <td>$1</td>
                   <td>
-                    <button type="button" class="btn btn-dark" style="                          
+                    <button type="button" class="btn btn-dark" style="
                         width: 20px;
                         height: 20px;
                         font: 20px/0 Arial,sans-serif;
@@ -176,7 +176,7 @@
                       -
                     </button>
                     <span style="padding: 0px 5px;">5</span>
-                    <button type="button" class="btn btn-dark" style="                          
+                    <button type="button" class="btn btn-dark" style="
                       width: 20px;
                       height: 20px;
                       font: 20px/0 Arial,sans-serif;
@@ -207,7 +207,7 @@
             <button type="button" class="btn btn-primary btn-lg">Confirm</button>
           </div>
           <div class="col-md-6" style="padding-left: 15%;">
-            <button type="button" class="btn btn-danger btn-lg">Cancel</button>  
+            <button type="button" class="btn btn-danger btn-lg">Cancel</button>
           </div>
         </div>
       </div>

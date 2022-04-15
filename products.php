@@ -13,10 +13,10 @@
 			</a>
 
 			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-			  <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-			  <li><a href="products.html" class="nav-link px-2 text-white">Products</a></li>
-			  <li><a href="orders.html" class="nav-link px-2 text-white">Order</a></li>
-			  <li><a href="users.html" class="nav-link px-2 text-white">Users</a></li>
+			  <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
+			  <li><a href="products.php" class="nav-link px-2 text-white">Products</a></li>
+			  <li><a href="orders.php" class="nav-link px-2 text-white">Order</a></li>
+			  <li><a href="users.php" class="nav-link px-2 text-white">Users</a></li>
 			</ul>
 
 
@@ -33,7 +33,7 @@
 
 
 	<div class="container" style="padding-top: 3%">
-		<a type="button" class="btn btn-outline-primary" href="add-products.html">Add Products</a>	
+		<a type="button" class="btn btn-outline-primary" href="add-products.php">Add Products</a>
 	</div>
 	<div class="container" style="padding-top: 3%;">
 		<div class="row">
@@ -54,7 +54,7 @@
 							<td>Toilet Paper</td>
 							<td>12$</td>
 							<td>6</td>
-							<td> 
+							<td>
 								<button type="button" class="btn btn-danger btn-sm">Delete</button>
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>
@@ -64,7 +64,7 @@
 							<td>Toilet Paper</td>
 							<td>12$</td>
 							<td>6</td>
-							<td> 
+							<td>
 								<button type="button" class="btn btn-danger btn-sm">Delete</button>
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>
@@ -74,7 +74,7 @@
 							<td>Toilet Paper</td>
 							<td>12$</td>
 							<td>6</td>
-							<td> 
+							<td>
 								<button type="button" class="btn btn-danger btn-sm">Delete</button>
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>
@@ -84,7 +84,7 @@
 							<td>Toilet Paper</td>
 							<td>12$</td>
 							<td>6</td>
-							<td> 
+							<td>
 								<button type="button" class="btn btn-danger btn-sm">Delete</button>
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>
@@ -94,17 +94,17 @@
 							<td>Toilet Paper</td>
 							<td>12$</td>
 							<td>6</td>
-							<td> 
+							<td>
 								<button type="button" class="btn btn-danger btn-sm">Delete</button>
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>
-						</tr>	
+						</tr>
 						<tr>
 							<td>6</td>
 							<td>Toilet Paper</td>
 							<td>12$</td>
 							<td>6</td>
-							<td> 
+							<td>
 								<button type="button" class="btn btn-danger btn-sm">Delete</button>
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>

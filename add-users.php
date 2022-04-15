@@ -15,10 +15,10 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="products.html" class="nav-link px-2 text-white">Products</a></li>
-          <li><a href="orders.html" class="nav-link px-2 text-white">Order</a></li>
-          <li><a href="users.html" class="nav-link px-2 text-white">Users</a></li>
+          <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="products.php" class="nav-link px-2 text-white">Products</a></li>
+          <li><a href="orders.php" class="nav-link px-2 text-white">Order</a></li>
+          <li><a href="users.php" class="nav-link px-2 text-white">Users</a></li>
         </ul>
 
 
@@ -47,7 +47,7 @@
       <label for="inputPassword4">Last name</label>
       <input type="lname" class="form-control" id="l_name" placeholder="Enter last name">
     </div>
-	
+
 	<div class="form-group col-md-4">
       <label for="inputPassword4">Phone number</label>
       <input type="lname" class="form-control" id="phone_number" placeholder="Enter Phone Number">
@@ -56,18 +56,18 @@
       <label for="inputPassword4">Email</label>
       <input type="lname" class="form-control" id="email_address" placeholder="Enter Email Address">
     </div>
-	
+
 	<div class="form-group col-md-4">
       <label for="inputPassword4">Address</label>
       <input type="address" class="form-control" id="home_address" placeholder="Enter Email Address">
     </div>
-	
+
   </div>
- 
+
   <button type="submit" class="btn btn-primary">Confirm</button>
 </form>
-	
-	
+
+
 </div>
 
 
