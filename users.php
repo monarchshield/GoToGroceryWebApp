@@ -75,6 +75,41 @@
 				</thead>
 				
 				<tbody>
+			
+				<?php 
+		
+					// Create connection
+					$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
+
+					// Check connection
+					if ($conn->connect_error) {
+					  die("Connection failed: " . $conn->connect_error);
+					}
+					echo "Connected successfully";
+				
+					$sql = "SELECT MemberID, FirstName, LastName, PhoneNum, JoinDate, Email FROM members";
+					$result = $conn->query($sql);
+					
+					
+					
+					if ($result->num_rows > 0) {
+					  // output data of each row
+					  while($row = $result->fetch_assoc()) 
+					  {
+						  
+						echo "<tr><td>" .$row["MemberID"]. "</td>" .
+							 "<td>" . $row["FirstName"].' '.$row["LastName"]. "</td>" .
+							 "<td>" .$row["PhoneNum"]. "</td>" .
+							 "<td>" .$row["Email"]. "</td>" .
+							 "<td>" .$row["JoinDate"]. "</td>" .
+							 "<td> <button  class='btn btn-warning'> <i class='fa fa-pencil fa-lg'></i></button></td>
+							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
+					  }
+					}
+				
+				?>
+				
+				<!--
 					<tr>
 						<td>1</td>
 						<td>Johm smith</td>
@@ -112,6 +147,8 @@
 						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
 						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
 					</tr>
+					
+					-->
 				</tbody>
 			</table>
 		</div>
