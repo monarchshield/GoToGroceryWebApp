@@ -1,4 +1,3 @@
-
 <head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
@@ -79,13 +78,13 @@
 				<?php
 
 					// Create connection
-					$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
+					$conn = new mysqli('localhost', 'root', '', 'gtg');
 
 					// Check connection
 					if ($conn->connect_error) {
 					  die("Connection failed: " . $conn->connect_error);
 					}
-					echo "Connected successfully";
+					//echo "Connected successfully";
 
 					$sql = "SELECT MemberID, FirstName, LastName, PhoneNum, JoinDate, Email FROM members";
 					$result = $conn->query($sql);
@@ -108,7 +107,6 @@
 					}
 
 				?>
-
 				<!--
 					<tr>
 						<td>1</td>
@@ -119,7 +117,6 @@
 						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
 						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
 					</tr>
-
 					<tr>
 						<td>2</td>
 						<td>Stephanie hall</td>
@@ -147,11 +144,13 @@
 						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
 						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
 					</tr>
-
 					-->
 				</tbody>
 			</table>
 		</div>
+        <form method = "post" class="col-md-6" action = "export_members.php">
+            <input type = "submit" name = "export" value = "Export CSV file" class="btn btn-outline-primary"/>
+        </form>
 	</div>
 
 	<div class="row" style="padding-top:1%;">
