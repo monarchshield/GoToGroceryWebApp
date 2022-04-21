@@ -116,6 +116,21 @@ CREATE TABLE `products` (
   `ExpiryDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+ `ID` int NOT NULL,
+ `Title` varchar(100) NOT NULL,
+ `ProductID` char(6),
+ `OrderID` char(6),
+ `MemberID` int(10),
+ `ActionTime` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -147,6 +162,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`ProductID`);
 
 --
+-- Indexes for table `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Constraints for dumped tables
 --
 
@@ -162,6 +183,15 @@ ALTER TABLE `orderitems`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`);
+
+--
+-- Constraints for table `history`
+--
+ALTER TABLE `history`
+  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`),
+  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`OrderID`) REFERENCES `orders` (`OrderID`),
+  ADD CONSTRAINT `history_ibfk_3` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
