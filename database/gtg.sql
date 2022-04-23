@@ -28,13 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `members` (
-  `MemberID` int(10) NOT NULL,
+  `MemberID` int(10) NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `JoinDate` date NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Address` varchar(100) NOT NULL,
-  `PhoneNum` int(10) NOT NULL
+  `PhoneNum` int(10) NOT NULL,
+  PRIMARY KEY (MemberID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -134,12 +135,6 @@ CREATE TABLE `history` (
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `members`
---
-ALTER TABLE `members`
-  ADD PRIMARY KEY (`MemberID`);
 
 --
 -- Indexes for table `orderitems`
