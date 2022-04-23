@@ -17,6 +17,8 @@
             $result = mysqli_query($connect, $query) or die("Unable to add member's record into Members table");
             if ($result) {
                 echo "Successfully add member's details into Members Table";
+				header('Location: Users.php');
+			
             } else {
                 echo "Form unsuccessfully submitted";
             }
