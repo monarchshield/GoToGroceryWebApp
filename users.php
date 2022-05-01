@@ -10,10 +10,10 @@
 
 
 	<script>
-	$(document).ready(function() {
-		$('#example').DataTable();
-	} );
-</script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		} );
+	</script>
 </head>
 
 <body>
@@ -78,7 +78,7 @@
 				<?php
 
 					// Create connection
-					$conn = new mysqli('localhost', 'root', '', 'gtg');
+					$conn = new mysqli('localhost', 'root', '', 'GoToGro');
 
 					// Check connection
 					if ($conn->connect_error) {

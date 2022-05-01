@@ -9,12 +9,6 @@
   <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
-
-  <script>
-    $(document).ready(function () {
-      $('#example').DataTable();
-    });
-  </script>
 </head>
 
 <body>
@@ -46,13 +40,14 @@
   </header>
 
   <div class="container" style="padding-top:5%;">
-    <form>
+  
+    <form action = "insert_order.php" method="post">
       <div class="form-row py-3">
         <div class="col-md-6" style="padding: 0% 3%;">
           <h3 style="padding-bottom: 5%;">Billing details</h3>
           <div class="col-md-6" style="padding: 0%;">
-            User ID
-            <div class="dropdown show col-md-6 py-3" style="padding: 0%;">
+            <lable for="memberid">User ID</label>
+            <!-- <div class="dropdown show col-md-6 py-3" style="padding: 0%;">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width:400%">
                 Please choose
@@ -62,15 +57,35 @@
                 <a class="dropdown-item">#2</a>
                 <a class="dropdown-item">#3</a>
               </div>
-            </div>
+            </div> -->
+            <select class="custom-select" name="memberid" id="memberid" style="margin: 2% 0 2% 0;">
+              <option selected>Open this select menu</option>
+              <?php
+                $conn = new mysqli('localhost', 'root', '', 'GoToGro');
+                if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+                }
+                $sql =  "SELECT MemberID, FirstName, LastName FROM members";
+                $result = $conn->query($sql);
+                if($result->num_rows > 0)
+                {
+                  while($row = $result->fetch_assoc())
+                  {
+                    echo "<option value=\"" .$row['MemberID']. "\">" .$row['MemberID']. ' ' .$row['FirstName'].' '.$row['LastName']. "</option>";
+                  }
+
+                }
+              ?>
+            </select>
+
           </div>
           <div class="col" style="padding: 0%;">
-            <div style="padding-bottom: 2%;">Address</div>
-            <input class="form-control" type="text" placeholder="Enter Address" style="height:12%; ">
+            <label for="address" style="padding-bottom: 2%;">Address</label>
+            <input class="form-control" type="text" name="address" id="address" placeholder="Enter Address" style="height:12%; ">
           </div>
           <div class="col" style="padding: 0%;">
-            <div style="padding: 2% 0%;">Additional Information</div>
-            <input class="form-control" type="text" placeholder="Note" style="height:30%">
+            <label for="info" style="padding: 2% 0%;">Additional Information</label>
+            <input class="form-control" type="text" name="info" id="info" placeholder="Note" style="height:30%">
           </div>
         </div>
         <div class="col-md-6" style="padding: 0% 3%;">
@@ -204,13 +219,14 @@
         <div class="col-md-6"></div>
         <div class="row g-3 col-md-6" style="padding: 5% 3%;">
           <div class="col-md-6" style="padding-left: 15%;">
-            <button type="button" class="btn btn-primary btn-lg">Confirm</button>
+            <input type="submit" name="submit" value="Confirm" class="btn btn-primary btn-lg"></input>
           </div>
           <div class="col-md-6" style="padding-left: 15%;">
             <button type="button" class="btn btn-danger btn-lg">Cancel</button>
           </div>
         </div>
       </div>
+      <!-- <button type="submit" name = "submit" class="btn btn-primary">Confirm</button> -->
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
