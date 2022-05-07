@@ -17,8 +17,6 @@
             //Write SQL query
             $query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info) values('$memberid', '$time', '$status', '$info')";
 
-
-
             $result = mysqli_query($connect, $query) or die("Unable to add order's record into Orders table");
             if ($result) {
                 echo "Successfully add order's details into Orders Table";
