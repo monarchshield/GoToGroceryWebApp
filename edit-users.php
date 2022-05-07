@@ -3,14 +3,25 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script>
         function setMemId() {
-          if (sessionStorage.mem_id)
+          if (sessionStorage.editUserId)
           {
               const memid_input = document.getElementById("memid");
-              memid_input.value = sessionStorage.mem_id;
+              const fname_input = document.getElementById("fname");
+              const lname_input = document.getElementById("lname");
+              const pnum_input = document.getElementById("phone_number");
+              const email_input = document.getElementById("email_address");
+              const joindate_input = document.getElementById("join_date");
+              memid_input.value = sessionStorage.editUserId;
+              fname_input.value = sessionStorage.editFName;
+              lname_input.value = sessionStorage.editLName;
+              pnum_input.value = sessionStorage.editPnum;
+              email_input.value = sessionStorage.editEmail;
+              joindate_input.value = sessionStorage.editJoinDate;
               sessionStorage.clear(); // clear the session storage 
           }
           else
           {
+            alert("Please choose a member record to change details.")
             window.location.replace("/users.php"); // redirect to users when there is no member id
           }
         }

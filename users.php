@@ -15,8 +15,13 @@
 	} );
 	</script>
 	<script type="text/javascript">
-		function getMemberId(id) {
-			sessionStorage.mem_id = id;
+		function getUserData(id, fname, lname, pnum, email, joindate) {
+			sessionStorage.editUserId = id;
+			sessionStorage.editFName = fname;
+			sessionStorage.editLName = lname;
+			sessionStorage.editPnum = pnum;
+			sessionStorage.editEmail = email;
+			sessionStorage.editJoinDate = joindate;
 		}
 	</script>
 </head>
@@ -100,13 +105,16 @@
 					  // output data of each row
 					  while($row = $result->fetch_assoc())
 					  {
-
 						echo "<tr><td>" .$row["MemberID"]. "</td>" .
 							 "<td>" . $row["FirstName"].' '.$row["LastName"]. "</td>" .
 							 "<td>" .$row["PhoneNum"]. "</td>" .
 							 "<td>" .$row["Email"]. "</td>" .
 							 "<td>" .$row["JoinDate"]. "</td>" .
-							 "<td> <a type='button' class='btn btn-warning' href='edit-users.php' onclick='getMemberId(".$row['MemberID'].")'> <i class='fa fa-pencil fa-lg'></i></a></td>
+							 "<td> 
+							 	<a type='button' class='btn btn-warning' href='edit-users.php' onclick='getUserData(`".$row['MemberID']."`,`".$row['FirstName']."`,`".$row['LastName']."`,`".$row['PhoneNum']."`,`".$row['Email']."`,`".$row['JoinDate']."`)'>
+								  	<i class='fa fa-pencil fa-lg'></i>
+								</a>
+							  </td>
 							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
 					  }
 					}
