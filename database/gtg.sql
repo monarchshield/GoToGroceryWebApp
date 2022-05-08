@@ -132,7 +132,6 @@ INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`,
 ('1012', 'Lemons', 'Fruit', '1 Kilogram', 2, 50, '2022-05-05'),
 ('1013', 'Mangoes', 'Fruit', '1 Kilogram', 6, 80, '2022-05-05'),
 ('1014', 'Bananas ', 'Fruit', '1 Kilogram', 2, 200, '2022-05-06'),
-('1015', 'Tomatoes ', 'Fruit', '1 Kilogram', 4, 200, '2022-05-05');
 
 -- --------------------------------------------------------
 
