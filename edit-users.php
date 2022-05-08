@@ -73,28 +73,28 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="fname">First name</label>
-            <input type="text" name = "fname" class="form-control" id="fname" placeholder="Enter first name" />
+            <input type="text" name = "fname" class="form-control" id="fname" placeholder="Enter first name" required/>
         </div>
         <div class="form-group col-md-4">
             <label for="lname">Last name</label>
-            <input type="text" name = "lname" class="form-control" id="lname" placeholder="Enter last name" />
+            <input type="text" name = "lname" class="form-control" id="lname" placeholder="Enter last name" required/>
         </div>
         <div class="form-group col-md-4">
             <label for="join_date">Join Date</label>
-            <input type="date" name="join_date" class="form-control" id="join_date"  value="2018-07-22"/>
+            <input type="date" name="join_date" class="form-control" id="join_date"  value="2018-07-22" required/>
         </div>
         <div class="form-group col-md-4">
             <label for="phone_number">Phone number</label>
-            <input type="text" name = "phone_number" class="form-control" id="phone_number" placeholder="Enter Phone Number" />
+            <input type="text" name = "phone_number" class="form-control" id="phone_number" placeholder="Enter Phone Number" pattern="\d{1,10}" title="Phone number must be 1 to 10 digits" required/>
     </div>
         <div class="form-group col-md-4">
             <label for="email_address">Email</label>
-            <input type="text" name = "email" class="form-control" id="email_address" placeholder="Enter Email Address" />
+            <input type="text" name = "email" class="form-control" id="email_address" placeholder="Enter Email Address" required/>
         </div>
 
         <div class="form-group col-md-4">
             <label for="home_address">Address</label>
-            <input type="text" name = "address" class="form-control" id="home_address" placeholder="Enter Email Address" />
+            <input type="text" name = "address" class="form-control" id="home_address" placeholder="Enter Email Address" required/>
         </div>
 
     </div>
