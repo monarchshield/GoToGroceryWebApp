@@ -117,6 +117,23 @@ CREATE TABLE `products` (
   `ExpiryDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`, `Stock`, `ExpiryDate`) VALUES
+('1001', 'Milk', 'Dairy', '1 Litre', 4, 30, '2022-04-30'),
+('1002', 'Milk', 'Dairy', '2 Litre', 4, 30, '2022-04-30'),
+('1003', 'Almond Milk', 'Dairy', '1 Litre', 4, 40, '0000-00-00'),
+('1004', 'Tasty Cheese Slices', 'Dairy', '500 Grams', 7, 25, '2022-05-04'),
+('1005', 'Shredded Mozarella', 'Dairy', '500 Grams', 6, 35, '2022-05-06'),
+('1006', 'Vanilla Yoghurt', 'Dairy', '1 Kilogram', 6, 35, '2022-05-11'),
+('1007', 'Strawberry Yoghurt', 'Dairy', '1 Kilogram', 8, 20, '2022-05-12'),
+('1008', 'Blueberry Yoghurt', 'Dairy', '1 Kilogram', 8, 20, '2022-05-05'),
+('1009', 'Butter', 'Dairy', '500 Grams', 4, 50, '2022-07-07'),
+('1010', 'Apples', 'Fruit', '1 Kilogram', 2, 100, '2022-05-05'),
+('1011', 'Oranges', 'Fruit', '1 Kilogram', 3, 90, '2022-05-05'),
+('1012', 'Lemons', 'Fruit', '1 Kilogram', 2, 50, '2022-05-05'),
+('1013', 'Mangoes', 'Fruit', '1 Kilogram', 6, 80, '2022-05-05'),
+('1014', 'Bananas ', 'Fruit', '1 Kilogram', 2, 200, '2022-05-06'),
+('1015', 'Tomatoes ', 'Fruit', '1 Kilogram', 4, 200, '2022-05-05');
+
 -- --------------------------------------------------------
 
 --
