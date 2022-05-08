@@ -1,7 +1,19 @@
 <head>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- <script src="javascript/bootstrap.js"></script>
-</head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+	<script>
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+</script>
 
 <body>
 
@@ -43,12 +55,52 @@
 						<tr>
 							<th>ID</th>
 							<th>Product Name</th>
+							<th>Category</th>
+							<th>Unit</th>
 							<th>Price</th>
 							<th>Stock</th>
-							<th></th>
+							<th>Expiry Date</th>
+							<th>Edit</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
+
+					<?php
+
+					// Create connection
+					$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
+
+					// Check connection
+					if ($conn->connect_error) {
+					  die("Connection failed: " . $conn->connect_error);
+					}
+					//echo "Connected successfully";
+
+					$sql = "SELECT ProductID, ProductName, Category, Unit, Price, Stock, ExpiryDate FROM products";
+					$result = $conn->query($sql);
+
+
+
+					if ($result->num_rows > 0) {
+					  // output data of each row
+					  while($row = $result->fetch_assoc())
+					  {
+
+						echo "<tr><td>" .$row["ProductID"]. "</td>" .
+							 "<td>" . $row["ProductName"]. "</td>" .
+							 "<td>" .$row["Category"]. "</td>" .
+							 "<td>" .$row["Unit"]. "</td>" .
+							 "<td>" .$row["Price"]. "</td>" .
+							 "<td>" .$row["Stock"]. "</td>" .
+							 "<td>" .$row["ExpiryDate"]. "</td>" .
+							 "<td> <button  class='btn btn-warning'> <i class='fa fa-pencil fa-lg'></i></button></td>
+							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
+					  }
+					}
+
+				?>
+						<!--
 						<tr>
 							<td>1</td>
 							<td>Toilet Paper</td>
@@ -109,18 +161,9 @@
 								<button type="button" class="btn btn-warning btn-sm">Edit</button>
 							</td>
 						</tr>
+-->
 					</tbody>
 				</table>
-			</div>
-			<div class="col-4">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-						<input type="search" class="form-control form-control-dark" placeholder="Search product">
-					</form>
-					<div class="text-end">
-						<button type="button" class="btn btn-primary me-2">Search</button>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
