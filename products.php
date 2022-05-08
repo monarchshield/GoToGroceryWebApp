@@ -165,16 +165,6 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="col-4">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-						<input type="search" class="form-control form-control-dark" placeholder="Search product">
-					</form>
-					<div class="text-end">
-						<button type="button" class="btn btn-primary me-2">Search</button>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
