@@ -5,6 +5,7 @@
     $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Unable to connect");
     if (isset($_POST["submit"])) {
         if (!empty($_POST["fname"]) && !empty($_POST["lname"]) && !empty($_POST["join_date"]) && !empty($_POST["phone_number"]) && !empty($_POST["email"]) && !empty($_POST["address"])) {
+            $id = $_POST["memid"];
             $fname = $_POST["fname"];
             $lname = $_POST["lname"];
             $phone_num= $_POST["phone_number"];
@@ -13,10 +14,10 @@
             $address = $_POST["address"];
             
             //Write SQL query
-            $query = "INSERT INTO members(FirstName, LastName, JoinDate, Email, Address, PhoneNum) values('$fname', '$lname', '$join_date', '$email', '$address', '$phone_num')";
-            $result = mysqli_query($connect, $query) or die("Unable to add member's record into Members table");
+            $query = "UPDATE members SET FirstName='$fname', LastName='$lname', JoinDate='$join_date', Email='$email', Address='$address', PhoneNum='$phone_num' WHERE MemberID = '$id'";
+            $result = mysqli_query($connect, $query) or die("Unable to change member's record in Members table");
             if ($result) {
-                echo "Successfully add member's details into Members Table";
+                echo "Successfully change details of member no '$id'";
 				header('Location: Users.php');
 			
             } else {

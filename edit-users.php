@@ -61,7 +61,7 @@
 <div class="container" style="padding-top:5%">
 
 <h3>Edit User </h3>
-<form id="edit-form"> 
+<form  action = "change_members.php" method = "post"> 
     <div class="form-row">
         <div class="form-group col-md-4">
           <strong>
