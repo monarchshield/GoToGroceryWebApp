@@ -13,7 +13,13 @@
 	$(document).ready(function() {
 		$('#example').DataTable();
 	} );
-</script>
+	</script>
+	<script>
+		function storeDeleteMember(id) {
+			sessionStorage.getID = id;
+			confirm("Are you sure to delete a member ?");
+		}
+	</script>
 </head>
 
 <body>
@@ -102,7 +108,11 @@
 							 "<td>" .$row["Email"]. "</td>" .
 							 "<td>" .$row["JoinDate"]. "</td>" .
 							 "<td> <button  class='btn btn-warning'> <i class='fa fa-pencil fa-lg'></i></button></td>
-							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
+							 <td> <a type='button' class='btn btn-warning' href='go-to-delete-users.php' onclick='storeDeleteMember(".$row['MemberID'].")'>
+							 			<i class='fa fa-trash-o fa-lg'></i>
+								  </a>
+							</td>
+						</tr>";
 					  }
 					}
 
