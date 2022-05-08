@@ -120,7 +120,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`, `Stock`, `ExpiryDate`) VALUES
 ('1001', 'Milk', 'Dairy', '1 Litre', 4, 30, '2022-04-30'),
 ('1002', 'Milk', 'Dairy', '2 Litre', 4, 30, '2022-04-30'),
-('1003', 'Almond Milk', 'Dairy', '1 Litre', 4, 40, '0000-00-00'),
+('1003', 'Almond Milk', 'Dairy', '1 Litre', 4, 40, '2022-04-30'),
 ('1004', 'Tasty Cheese Slices', 'Dairy', '500 Grams', 7, 25, '2022-05-04'),
 ('1005', 'Shredded Mozarella', 'Dairy', '500 Grams', 6, 35, '2022-05-06'),
 ('1006', 'Vanilla Yoghurt', 'Dairy', '1 Kilogram', 6, 35, '2022-05-11'),
