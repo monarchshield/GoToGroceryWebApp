@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
   <header class="p-3 bg-dark text-white">
@@ -33,64 +33,82 @@
       </div>
     </div>
   </header>
+  
   <div class="container" style="padding-top:5%">
 
     <h3>Add Product </h3>
-      <form class="position-relative">
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="fname">Name</label>
-          <input type="fname" class="form-control" id="p_name" placeholder="Enter name product">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputPassword4">Price</label>
-          <input type="pname" class="form-control" id="p_price" placeholder="Enter price product">
-        </div>
+     <form action="insert_product.php" method="post">
+			
+			<div class="form-row">
+				<div class=" col-md-4">
+				  <label for="productname">Name</label>
+				  <input type="text" name="p_name" class="form-control" id="p_name" placeholder="Enter name product">
+				</div>
+				
+				
+				<div class="col-md-4"> </div>
+				
+				<div class="col-md-4"> 
+				<p>Category of item</p>
+					<select name="p_category" class="form-select" aria-label="Default select example">
+					  <option selected>Open this select menu</option>
+					  <option value="Fruit">Fruit</option>
+					  <option value="Vegetable">Vegetable</option>
+					  <option value="Meat">Meat</option>
+					</select>
+				</div>
 
-      <div class="form-group col-md-4">
-          <label for="inputPassword4">Stock</label>
-          <input type="pprice" class="form-control" id="phone_number" placeholder="Enter Stock Number">
-        </div>
-      <div class="form-group col-md-4 float-end position-absolute top-0 end-0">
-          <label for="inputPassword4">Additional Infor</label>
-          <input style="height:150px" type="lname" class="form-control" id="pinfo" placeholder="Enter infor product">
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle float-end " style="margin-right:70px ;"  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
-            Category
-          </button>
-          <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Fruit</a></li>
-            <li><a class="dropdown-item" href="#">Vegetable</a></li>
-            <li><a class="dropdown-item" href="#">Dairy</a></li>
-            <li><a class="dropdown-item" href="#">Meat</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle float-end" type="button"  style="margin-right:50px ;"id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-           Unit
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Kg</a></li>
-            <li><a class="dropdown-item" href="#">bunch</a></li>
-            <li><a class="dropdown-item" href="#">head</a></li>
-            <li><a class="dropdown-item" href="#">doz</a></li>
-            <li><a class="dropdown-item" href="#">litre</a></li>
-            <li><a class="dropdown-item" href="#">each</a></li>
-          </ul>
-        </div>
+				
+			</div>
+			
+			<div class="form-row">
+				<div class="form-group col-md-4">
+				  <label for="price">Price</label>
+				  <input type="number" name="p_price" class="form-control" id="p_price" placeholder="Enter price product">
+				</div>
+				
+				<div class="col-md-4"> </div>
+				
+				<div class="col-md-4">   
+				<p>Unit of item</p>
+				   <select name="p_unit" id="p_unit" class="form-select" aria-label="Default select example">
+					  <option selected>Open this select menu</option>
+					  <option value="Kg">Kg</option>
+					  <option value="Bunch">Bunch</option>
+					  <option value="Head">Head</option>
+					  <option value="doz">doz</option>
+					  <option value="litre">litre</option>
+					  <option value="each">each</option>
+				  </select>
+				</div>
+				
+			</div>
 
+		  <div class="form-row">
+			  <div class="form-group col-md-4">
+				  <label for="stock">Stock</label>
+				  <input type="number" name="p_stock" class="form-control" id="p_stock" placeholder="Enter Stock Number">
+			  </div>
+			  <div class="col-md-8"> </div>
+			</div>
+			
 
-
-      <div class="form-group col-md-4 " >
-          <label for="inputPassword4">Expiry</label>
-          <input style="height:150px"type="address" class="form-control" id="pexpiry" placeholder="Enter expiry product">
-        </div>
-
+		<div class="form-row">
+		  <div class="form-group col-md-4" >
+			  <label for="expiry">Expiry</label>
+			<input type="date" name="p_expiry" class="form-control" id="p_expiry"/>
+		  </div>
+		  
+		
+		</div>
+		
+		  <button type="submit" name = "submit" class="btn btn-primary">Confirm</button>
+		  <button type="reset" class="btn btn-primary ">Cancel</button>
       </div>
-      <button type="submit" class="btn btn-primary ">Confirm</button>
-      <button type="reset" class="btn btn-primary ">Cancel</button>
+	  
     </form>
+	
+	
 
 
     </div>
