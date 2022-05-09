@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4000
--- Generation Time: Apr 11, 2022 at 12:05 PM
+-- Generation Time: May 08, 2022 at 02:05 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -24,18 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+  `ID` int(11) NOT NULL,
+  `Title` varchar(100) NOT NULL,
+  `ProductID` int(6) DEFAULT NULL,
+  `OrderID` int(6) DEFAULT NULL,
+  `MemberID` int(10) DEFAULT NULL,
+  `ActionTime` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `members`
 --
 
 CREATE TABLE `members` (
-  `MemberID` int(10) NOT NULL AUTO_INCREMENT,
+  `MemberID` int(10) NOT NULL,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `JoinDate` date NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Address` varchar(100) NOT NULL,
-  `PhoneNum` int(10) NOT NULL,
-  PRIMARY KEY (MemberID)
+  `PhoneNum` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -73,7 +87,23 @@ INSERT INTO `members` (`MemberID`, `FirstName`, `LastName`, `JoinDate`, `Email`,
 (27, 'Hazel', 'Parks', '2022-03-05', 'ethan_cruickshank@hotmail.com', '9 Nandewar Street', 412312336),
 (28, 'Geoffrey', 'Tobias', '2022-05-05', 'leo.oreilly84@hotmail.com', '73 Chatsworth Drive', 412312337),
 (29, 'Constance', 'Jekyll', '2022-04-07', 'zara30@hotmail.com', '24 Hargrave Road', 412312338),
-(30, 'Russell', 'Fleming', '2022-04-08', 'georgia.turner1@hotmail.com', '51 Martens Place', 412312339);
+(30, 'Russell', 'Fleming', '2022-04-08', 'georgia.turner1@hotmail.com', '51 Martens Place', 412312339),
+(31, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(32, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(33, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(34, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(35, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(36, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(37, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
+(38, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(39, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(40, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(41, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(42, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(43, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(44, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
+(45, 'Penny', 'Pickles', '2018-07-22', 'P.Moron@gmail.com', '15 Nickle street', 41231231),
+(46, 'Penny', 'Pickle', '2018-07-22', 'tiffany@co.com', '8 diamonds road', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -82,8 +112,8 @@ INSERT INTO `members` (`MemberID`, `FirstName`, `LastName`, `JoinDate`, `Email`,
 --
 
 CREATE TABLE `orderitems` (
-  `OrderID` char(6) NOT NULL,
-  `ProductID` char(6) NOT NULL,
+  `OrderID` int(6) NOT NULL,
+  `ProductID` int(6) NOT NULL,
   `Quantity` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -94,7 +124,7 @@ CREATE TABLE `orderitems` (
 --
 
 CREATE TABLE `orders` (
-  `OrderID` char(6) NOT NULL,
+  `OrderID` int(6) NOT NULL,
   `MemberID` int(10) NOT NULL,
   `OrderTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `OrderStatus` enum('PAID','PENDING','FAIL') NOT NULL DEFAULT 'PENDING',
@@ -108,7 +138,7 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `products` (
-  `ProductID` char(6) NOT NULL,
+  `ProductID` int(6) NOT NULL,
   `ProductName` varchar(100) NOT NULL,
   `Category` varchar(30) NOT NULL,
   `Unit` varchar(10) NOT NULL,
@@ -136,21 +166,33 @@ INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `history`
+-- Dumping data for table `products`
 --
 
-CREATE TABLE `history` (
- `ID` int NOT NULL,
- `Title` varchar(100) NOT NULL,
- `ProductID` char(6),
- `OrderID` char(6),
- `MemberID` int(10),
- `ActionTime` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`, `Stock`, `ExpiryDate`) VALUES
+(1, 'Beef', 'Meat', 'Kg', 15, 50, '2022-05-15'),
+(2, 'Chicken', 'Meat', 'Kg', 25, 30, '2022-05-15'),
+(3, 'Pizza', 'Meat', 'each', 25, 30, '2022-05-22'),
+(4, 'Pizza', 'Meat', 'each', 25, 30, '2022-05-22');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ProductID` (`ProductID`),
+  ADD KEY `OrderID` (`OrderID`),
+  ADD KEY `MemberID` (`MemberID`);
+
+--
+-- Indexes for table `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`MemberID`);
 
 --
 -- Indexes for table `orderitems`
@@ -173,14 +215,44 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`ProductID`);
 
 --
--- Indexes for table `history`
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  ADD PRIMARY KEY (`ID`);
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `members`
+--
+ALTER TABLE `members`
+  MODIFY `MemberID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `OrderID` int(6) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `ProductID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `history`
+--
+ALTER TABLE `history`
+  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`),
+  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`OrderID`) REFERENCES `orders` (`OrderID`),
+  ADD CONSTRAINT `history_ibfk_3` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`);
 
 --
 -- Constraints for table `orderitems`
@@ -194,15 +266,6 @@ ALTER TABLE `orderitems`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`);
-
---
--- Constraints for table `history`
---
-ALTER TABLE `history`
-  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`),
-  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`OrderID`) REFERENCES `orders` (`OrderID`),
-  ADD CONSTRAINT `history_ibfk_3` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`);
-
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
