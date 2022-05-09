@@ -16,7 +16,8 @@
 	</script>
 
 	<script type="text/javascript">
-		function getUserData(id, fname, lname, pnum, email, joindate) {
+		function getUserData(id, fname, lname, pnum, email, joindate) 
+		{
 			sessionStorage.editUserId = id;
 			sessionStorage.editFName = fname;
 			sessionStorage.editLName = lname;
@@ -25,12 +26,13 @@
 			sessionStorage.editJoinDate = joindate;
 		}
 
-		function storeDeleteMember(id) {
+		function storeDeleteMember(id) 
+		{
 			sessionStorage.getID = id;
 			confirm("Are you sure to delete a member ?");
-			}
-
 		}
+
+		
 	</script>
 </head>
 
