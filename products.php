@@ -1,3 +1,4 @@
+<?php session_start();?>
 <head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
@@ -13,7 +14,18 @@
 	$(document).ready(function() {
 		$('#example').DataTable();
 	} );
-</script>
+	</script>
+	
+	
+	
+	<script type="text/javascript">
+	function GetEditProductID(id)
+	{
+		sessionStorage.ProductID = id;
+	}
+	
+	
+	</script>
 
 <body>
 
@@ -79,8 +91,8 @@
 
 					$sql = "SELECT ProductID, ProductName, Category, Unit, Price, Stock, ExpiryDate FROM products";
 					$result = $conn->query($sql);
-
-
+					
+					
 
 					if ($result->num_rows > 0) {
 					  // output data of each row
@@ -94,8 +106,12 @@
 							 "<td>" .$row["Price"]. "</td>" .
 							 "<td>" .$row["Stock"]. "</td>" .
 							 "<td>" .$row["ExpiryDate"]. "</td>" .
-							 "<td> <button  class='btn btn-warning'> <i class='fa fa-pencil fa-lg'></i></button></td>
+							 "<td> <a  type ='button' class='btn btn-warning' href='edit-products.php?EditProductID=" .$row["ProductID"]."'><i class='fa fa-pencil fa-lg'></i></button></td>
 							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
+							 
+							 
+							 
+						
 					  }
 					}
 
