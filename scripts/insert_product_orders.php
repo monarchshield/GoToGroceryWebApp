@@ -11,8 +11,11 @@
 	if(!empty($_POST['productid']) && !empty($_POST['orderid']))
 	{
 		$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
-		$query ="INSERT INTO orderitems(OrderID, ProductID, Quantity) values($product_id ,$order_id,'0')";
+		$query = "INSERT INTO orderitems(OrderID, ProductID, Quantity) values('$order_id', '$product_id', '0')";
 		$order_result = mysqli_query($conn, $query);
+		
+		echo $query;
+		
 		
 		$productinfo = mysqli_query($conn, "SELECT ProductName, Price FROM products where ProductID = $product_id");
 		$row = $productinfo->fetch_assoc();
