@@ -47,13 +47,18 @@
 	
 		$(document).ready(function(){
 			$('.add-product-btn').click(function(){
+				var ajax_orderid = $("#orderID").val();
+				var ajax_productid = $("#ajax_productid").val();
+				
 				$.ajax({
+					
+					
 					type: "POST",
 					url: "./scripts/insert_product_orders.php",
 					data: 
 					{
-						'productid': '10', 
-						'orderid':'2'
+						'productid': ajax_productid, 
+						'orderid': ajax_orderid
 						
 					},
 					success: function(data)
@@ -145,7 +150,7 @@
               
              
 				
-				<select class="form-select" aria-label="Default select example">
+				<select id="ajax_productid" class="form-select" aria-label="Default select example">
 				  <option selected>Please choose </option>
 				 
 					<?php
