@@ -16,7 +16,15 @@
                 }
 				
 				$sql = "SELECT MemberID, FirstName, LastName, PhoneNum, JoinDate, Email FROM members";
-                $result = $conn->query($sql);	
+                $member_result = $conn->query($sql);	
+				
+				$sql = "Select ProductID, ProductName, Price FROM Products";
+				$products_result = $conn->query($sql);
+				
+				$sql = "SELECT OrderID, ProductID, Quantity FROM orderitems";
+				$order_items =  $conn->query($sql);
+				
+				
 		?>
 
 </head>
@@ -58,19 +66,14 @@
           <div class="col-md-6" style="padding: 0%;">
             <lable for="memberid">User ID</label>
 
-				<select class="custom-select" name="memberid" id="memberid" style="margin: 2% 0 2% 0;">
+				<select class="custom-select overflow-auto" name="memberid" id="memberid" style="margin: 2% 0 2% 0;">
 				  <option selected>Open this select menu</option>
 			   
 				   <?php
-					
-					if($result->num_rows > 0)
-					{
-					  while($row = $result->fetch_assoc())
+					  while($row = $member_result->fetch_assoc())
 					  {
 						echo "<option value=\"" .$row['MemberID']. "\">" .$row['MemberID']. ' ' .$row['FirstName'].' '.$row['LastName']. "</option>";
 					  }
-
-					}
 				  ?>
 				</select>
 
@@ -87,19 +90,32 @@
         <div class="col-md-6" style="padding: 0% 3%;">
           <h3 style="padding-bottom: 5%;">Order</h3>
           Add product
-          <div class="row g-3 py-3">
-            <div class="dropdown show col-sm-10 " >
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width: 100%;">
-                Please choose
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="min-width: 90%;">
-                <a class="dropdown-item">Lettuce</a>
-                <a class="dropdown-item">Egg</a>
-                <a class="dropdown-item">Tomato</a>
-              </div>
+          <div class="row">
+            <div class="col-md-10" >
+              
+             
+				
+				<select class="form-select" aria-label="Default select example">
+				  <option selected>Please choose </option>
+				 
+					<?php
+						while($row = $products_result->fetch_assoc())
+						{
+							echo '<option value="'.$row['ProductID'] .'">'. $row['ProductID'] . ":" . $row['ProductName'] . '</option>';
+						}
+					?>
+
+				 <option value="1">One</option>
+				  <option value="2">Two</option>
+				  <option value="3">Three</option>
+				  
+				  
+				</select>
+				
+				
+		
             </div>
-            <div class="col-sm-2" style="padding: 0%;">
+            <div class="col-md-2">
               <button type="button" class="btn btn-primary btn-group-sm">Add</button>
 
             </div>
