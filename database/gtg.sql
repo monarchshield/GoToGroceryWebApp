@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4000
--- Generation Time: May 08, 2022 at 02:05 PM
+-- Generation Time: May 10, 2022 at 04:47 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -49,61 +49,59 @@ CREATE TABLE `members` (
   `JoinDate` date NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Address` varchar(100) NOT NULL,
-  `PhoneNum` int(10) NOT NULL
+  `PhoneNum` int(10) NOT NULL,
+  `Active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`MemberID`, `FirstName`, `LastName`, `JoinDate`, `Email`, `Address`, `PhoneNum`) VALUES
-(0, 'FirstName', 'LastName', '0000-00-00', 'Email', 'Address', 0),
-(1, 'Edith', 'Tifft', '2022-04-07', 'hayden_gleason@hotmail.com', '94 Kopkes Road', 412312310),
-(2, 'Danica', 'Burns', '2022-04-08', 'ava.becker17@hotmail.com', '86 Goebels Road', 412312311),
-(3, 'Destiny', 'Colt', '2022-03-05', 'callum_lewis@gmail.com', '81 Seaview Court', 412312312),
-(4, 'Finn', 'Ikin', '2022-05-05', 'abby.hane@gmail.com', '83 Mackie Street', 412312313),
-(5, 'Jerald', 'Presley', '2022-04-07', 'imogen.howell@hotmail.com', '7 Nandewar Street', 412312314),
-(6, 'Lora', 'Prescott', '2022-04-08', 'jessica_james64@hotmail.com', '71 Chatsworth Drive', 412312315),
-(7, 'Jerrold', 'Sharman', '2022-03-05', 'ava60@yahoo.com', '22 Hargrave Road', 412312316),
-(8, 'Erma', 'Keen', '2022-05-05', 'ali54@gmail.com', '49 Martens Place', 412312317),
-(9, 'Lamar', 'Newman', '2022-04-07', 'jonathan.howe87@hotmail.com', '74 Hillsdale Road', 412312318),
-(10, 'Darren', 'Ellison', '2022-04-08', 'scarlett_cormier61@hotmail.com', '87 Halsey Road', 412312319),
-(11, 'Dewey', 'Tracy', '2022-03-05', 'max_greenfelder41@hotmail.com', '70 Barker Street', 412312320),
-(12, 'Margery', 'Thorpe', '2022-05-05', 'lillian_thomson53@gmail.com', '95 Kopkes Road', 412312321),
-(13, 'Edna', 'Swift', '2022-04-07', 'mikayla.west@hotmail.com', '87 Goebels Road', 412312322),
-(14, 'Leonard', 'Attaway', '2022-04-08', 'isabella_hartmann@hotmail.com', '82 Seaview Court', 412312323),
-(15, 'Major', 'Austin', '2022-03-05', 'christian_smith@hotmail.com', '84 Mackie Street', 412312324),
-(16, 'Darrel', 'Frost', '2022-05-05', 'lucy_erdman@hotmail.com', '8 Nandewar Street', 412312325),
-(17, 'Elaine', 'Elder', '2022-04-07', 'mikayla62@hotmail.com', '72 Chatsworth Drive', 412312326),
-(18, 'Ophelia', 'Tyson', '2022-04-08', 'sebastian.thomas34@hotmail.com', '23 Hargrave Road', 412312327),
-(19, 'Rosalind', 'Anthonyson', '2022-03-05', 'olivia57@gmail.com', '50 Martens Place', 412312328),
-(20, 'Dianne', 'Breckenridge', '2022-05-05', 'grace.grady@hotmail.com', '75 Hillsdale Road', 412312329),
-(21, 'Mariah', 'Alexander', '2022-04-07', 'caleb21@gmail.com', '88 Halsey Road', 412312330),
-(22, 'Scot', 'Giffard', '2022-04-08', 'finn36@hotmail.com', '71 Barker Street', 412312331),
-(23, 'Shirley', 'Attwater', '2022-03-05', 'chloe.cassin96@hotmail.com', '96 Kopkes Road', 412312332),
-(24, 'Christine', 'Kynaston', '2022-05-05', 'abbey.casper@hotmail.com', '88 Goebels Road', 412312333),
-(25, 'Bryce', 'Gabrielson', '2022-04-07', 'benjamin_paterson90@yahoo.com', '83 Seaview Court', 412312334),
-(26, 'Hale', 'Cason', '2022-04-08', 'zachary94@yahoo.com', '85 Mackie Street', 412312335),
-(27, 'Hazel', 'Parks', '2022-03-05', 'ethan_cruickshank@hotmail.com', '9 Nandewar Street', 412312336),
-(28, 'Geoffrey', 'Tobias', '2022-05-05', 'leo.oreilly84@hotmail.com', '73 Chatsworth Drive', 412312337),
-(29, 'Constance', 'Jekyll', '2022-04-07', 'zara30@hotmail.com', '24 Hargrave Road', 412312338),
-(30, 'Russell', 'Fleming', '2022-04-08', 'georgia.turner1@hotmail.com', '51 Martens Place', 412312339),
-(31, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(32, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(33, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(34, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(35, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(36, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(37, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874),
-(38, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(39, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(40, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(41, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(42, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(43, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(44, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839),
-(45, 'Penny', 'Pickles', '2018-07-22', 'P.Moron@gmail.com', '15 Nickle street', 41231231),
-(46, 'Penny', 'Pickle', '2018-07-22', 'tiffany@co.com', '8 diamonds road', 2147483647);
+INSERT INTO `members` (`MemberID`, `FirstName`, `LastName`, `JoinDate`, `Email`, `Address`, `PhoneNum`, `Active`) VALUES
+(0, 'FirstName', 'LastName', '0000-00-00', 'Email', 'Address', 0, 1),
+(1, 'Edith', 'Tifft', '2022-04-07', 'hayden_gleason@hotmail.com', '94 Kopkes Road', 412312310, 1),
+(4, 'Finn', 'Gurkin', '2022-05-05', 'abby.hane@gmail.com', '53 Testers street', 412312313, 1),
+(5, 'Jerald', 'Presley', '2022-04-07', 'imogen.howell@hotmail.com', '7 Nandewar Street', 412312314, 0),
+(6, 'Lora', 'Presley', '2022-04-08', 'jessica_james64@hotmail.com', '67 Testers street', 412312315, 0),
+(7, 'Jerrold', 'Sharman', '2022-03-05', 'ava60@yahoo.com', '22 Hargrave Road', 412312316, 1),
+(8, 'Erma', 'Keen', '2022-05-05', 'ali54@gmail.com', '49 Martens Place', 412312317, 1),
+(9, 'Lamar', 'Newman', '2022-04-07', 'jonathan.howe87@hotmail.com', '74 Hillsdale Road', 412312318, 1),
+(11, 'Dewey', 'Tracy', '2022-03-05', 'max_greenfelder41@hotmail.com', '70 Barker Street', 412312320, 1),
+(12, 'Margery', 'Thorpe', '2022-05-05', 'lillian_thomson53@gmail.com', '95 Kopkes Road', 412312321, 1),
+(13, 'Edna', 'Swift', '2022-04-07', 'mikayla.west@hotmail.com', '87 Goebels Road', 412312322, 1),
+(14, 'Leonard', 'Attaway', '2022-04-08', 'isabella_hartmann@hotmail.com', '82 Seaview Court', 412312323, 1),
+(15, 'Major', 'Austin', '2022-03-05', 'christian_smith@hotmail.com', '84 Mackie Street', 412312324, 1),
+(16, 'Darrel', 'Frost', '2022-05-05', 'lucy_erdman@hotmail.com', '8 Nandewar Street', 412312325, 1),
+(17, 'Elaine', 'Elder', '2022-04-07', 'mikayla62@hotmail.com', '72 Chatsworth Drive', 412312326, 1),
+(18, 'Ophelia', 'Tyson', '2022-04-08', 'sebastian.thomas34@hotmail.com', '23 Hargrave Road', 412312327, 1),
+(19, 'Rosalind', 'Anthonyson', '2022-03-05', 'olivia57@gmail.com', '50 Martens Place', 412312328, 1),
+(20, 'Dianne', 'Breckenridge', '2022-05-05', 'grace.grady@hotmail.com', '75 Hillsdale Road', 412312329, 1),
+(21, 'Mariah', 'Alexander', '2022-04-07', 'caleb21@gmail.com', '88 Halsey Road', 412312330, 1),
+(22, 'Scot', 'Giffard', '2022-04-08', 'finn36@hotmail.com', '71 Barker Street', 412312331, 1),
+(23, 'Shirley', 'Attwater', '2022-03-05', 'chloe.cassin96@hotmail.com', '96 Kopkes Road', 412312332, 1),
+(24, 'Christine', 'Kynaston', '2022-05-05', 'abbey.casper@hotmail.com', '88 Goebels Road', 412312333, 1),
+(25, 'Bryce', 'Gabrielson', '2022-04-07', 'benjamin_paterson90@yahoo.com', '83 Seaview Court', 412312334, 1),
+(26, 'Hale', 'Cason', '2022-04-08', 'zachary94@yahoo.com', '85 Mackie Street', 412312335, 1),
+(27, 'Hazel', 'Parks', '2022-03-05', 'ethan_cruickshank@hotmail.com', '9 Nandewar Street', 412312336, 1),
+(28, 'Geoffrey', 'Tobias', '2022-05-05', 'leo.oreilly84@hotmail.com', '73 Chatsworth Drive', 412312337, 1),
+(29, 'Constance', 'Jekyll', '2022-04-07', 'zara30@hotmail.com', '24 Hargrave Road', 412312338, 1),
+(30, 'Russell', 'Fleming', '2022-04-08', 'georgia.turner1@hotmail.com', '51 Martens Place', 412312339, 1),
+(31, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(32, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(33, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(34, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(35, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(36, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(37, 'Jennifer', 'Lawrence', '2018-07-22', 'JLawrence@gmail.com', '32 Canoe Avenue ', 412364874, 1),
+(38, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(39, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(40, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(41, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(42, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(43, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(44, 'Peter', 'Pettigrew', '2018-07-22', 'P.P@gmail.com', '45 Lickey street', 423212839, 1),
+(45, 'Penny', 'Pickles', '2018-07-22', 'P.Moron@gmail.com', '15 Nickle street', 41231231, 1),
+(46, 'Penny', 'Pickle', '2018-07-22', 'tiffany@co.com', '8 diamonds road', 2147483647, 1);
 
 -- --------------------------------------------------------
 
@@ -128,7 +126,8 @@ CREATE TABLE `orders` (
   `MemberID` int(10) NOT NULL,
   `OrderTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `OrderStatus` enum('PAID','PENDING','FAIL') NOT NULL DEFAULT 'PENDING',
-  `Info` varchar(300) DEFAULT NULL
+  `Info` varchar(300) DEFAULT NULL,
+  `Active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -144,36 +143,19 @@ CREATE TABLE `products` (
   `Unit` varchar(10) NOT NULL,
   `Price` int(10) NOT NULL,
   `Stock` int(10) NOT NULL,
-  `ExpiryDate` date NOT NULL
+  `ExpiryDate` date NOT NULL,
+  `Active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`, `Stock`, `ExpiryDate`) VALUES
-('1001', 'Milk', 'Dairy', '1 Litre', 4, 30, '2022-04-30'),
-('1002', 'Milk', 'Dairy', '2 Litre', 4, 30, '2022-04-30'),
-('1003', 'Almond Milk', 'Dairy', '1 Litre', 4, 40, '0000-00-00'),
-('1004', 'Tasty Cheese Slices', 'Dairy', '500 Grams', 7, 25, '2022-05-04'),
-('1005', 'Shredded Mozarella', 'Dairy', '500 Grams', 6, 35, '2022-05-06'),
-('1006', 'Vanilla Yoghurt', 'Dairy', '1 Kilogram', 6, 35, '2022-05-11'),
-('1007', 'Strawberry Yoghurt', 'Dairy', '1 Kilogram', 8, 20, '2022-05-12'),
-('1008', 'Blueberry Yoghurt', 'Dairy', '1 Kilogram', 8, 20, '2022-05-05'),
-('1009', 'Butter', 'Dairy', '500 Grams', 4, 50, '2022-07-07'),
-('1010', 'Apples', 'Fruit', '1 Kilogram', 2, 100, '2022-05-05'),
-('1011', 'Oranges', 'Fruit', '1 Kilogram', 3, 90, '2022-05-05'),
-('1012', 'Lemons', 'Fruit', '1 Kilogram', 2, 50, '2022-05-05'),
-('1013', 'Mangoes', 'Fruit', '1 Kilogram', 6, 80, '2022-05-05'),
-('1014', 'Bananas ', 'Fruit', '1 Kilogram', 2, 200, '2022-05-06'),
-
--- --------------------------------------------------------
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`, `Stock`, `ExpiryDate`) VALUES
-(1, 'Beef', 'Meat', 'Kg', 15, 50, '2022-05-15'),
-(2, 'Chicken', 'Meat', 'Kg', 25, 30, '2022-05-15'),
-(3, 'Pizza', 'Meat', 'each', 25, 30, '2022-05-22'),
-(4, 'Pizza', 'Meat', 'each', 25, 30, '2022-05-22');
+INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`, `Stock`, `ExpiryDate`, `Active`) VALUES
+(1, 'Beef', 'Meat', 'Kg', 15, 50, '2022-05-15', 1),
+(2, 'Chicken', 'Meat', 'Kg', 25, 30, '2022-05-15', 0),
+(3, 'Cheese', 'Vegetable', 'each', 10, 15, '2022-05-29', 1),
+(4, 'WerkQueen', 'Fruit', 'Head', 5, 15, '2022-06-24', 0);
 
 --
 -- Indexes for dumped tables

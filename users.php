@@ -106,7 +106,7 @@
 					}
 					//echo "Connected successfully";
 
-					$sql = "SELECT MemberID, FirstName, LastName, PhoneNum, JoinDate, Email FROM members";
+					$sql = "SELECT MemberID, FirstName, LastName, PhoneNum, JoinDate, Email, Active FROM members";
 					$result = $conn->query($sql);
 
 
@@ -115,20 +115,23 @@
 					  // output data of each row
 					  while($row = $result->fetch_assoc())
 					  {
-						echo "<tr><td>" .$row["MemberID"]. "</td>" .
-							 "<td>" . $row["FirstName"].' '.$row["LastName"]. "</td>" .
-							 "<td>" .$row["PhoneNum"]. "</td>" .
-							 "<td>" .$row["Email"]. "</td>" .
-							 "<td>" .$row["JoinDate"]. "</td>" .
-							 "<td>
-							 	<a type='button' class='btn btn-warning' href='edit-users.php' onclick='getUserData(`".$row['MemberID']."`,`".$row['FirstName']."`,`".$row['LastName']."`,`".$row['PhoneNum']."`,`".$row['Email']."`,`".$row['JoinDate']."`)'>
-								  	<i class='fa fa-pencil fa-lg'></i>
-								</a>
-							  </td>
-							 <td>
-							 <a type='button' class='btn btn-warning' href='go-to-delete-users.php' onclick='storeDeleteMember(".$row['MemberID'].")'>
-							 			<i class='fa fa-trash-o fa-lg'></i>
-								  </a></td></tr>";
+						if($row["Active"] == 1)
+						{
+							echo "<tr><td>" .$row["MemberID"]. "</td>" .
+								 "<td>" . $row["FirstName"].' '.$row["LastName"]. "</td>" .
+								 "<td>" .$row["PhoneNum"]. "</td>" .
+								 "<td>" .$row["Email"]. "</td>" .
+								 "<td>" .$row["JoinDate"]. "</td>" .
+								 "<td>
+									<a type='button' class='btn btn-warning' href='edit-users.php' onclick='getUserData(`".$row['MemberID']."`,`".$row['FirstName']."`,`".$row['LastName']."`,`".$row['PhoneNum']."`,`".$row['Email']."`,`".$row['JoinDate']."`)'>
+										<i class='fa fa-pencil fa-lg'></i>
+									</a>
+								  </td>
+								 <td>
+								 <a type='button' class='btn btn-warning' href='go-to-delete-users.php' onclick='storeDeleteMember(".$row['MemberID'].")'>
+											<i class='fa fa-trash-o fa-lg'></i>
+									  </a></td></tr>";
+						}
 					  }
 					}
 

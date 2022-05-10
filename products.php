@@ -83,7 +83,7 @@
 					}
 					//echo "Connected successfully";
 
-					$sql = "SELECT ProductID, ProductName, Category, Unit, Price, Stock, ExpiryDate FROM products";
+					$sql = "SELECT ProductID, ProductName, Category, Unit, Price, Stock, ExpiryDate, Active FROM products";
 					$result = $conn->query($sql);
 					
 					
@@ -92,20 +92,18 @@
 					  // output data of each row
 					  while($row = $result->fetch_assoc())
 					  {
-
-						echo "<tr><td>" .$row["ProductID"]. "</td>" .
-							 "<td>" . $row["ProductName"]. "</td>" .
-							 "<td>" .$row["Category"]. "</td>" .
-							 "<td>" .$row["Unit"]. "</td>" .
-							 "<td>" .$row["Price"]. "</td>" .
-							 "<td>" .$row["Stock"]. "</td>" .
-							 "<td>" .$row["ExpiryDate"]. "</td>" .
-							 "<td> <a  type ='button' class='btn btn-warning' href='edit-products.php?EditProductID=" .$row["ProductID"]."'><i class='fa fa-pencil fa-lg'></i></button></td>
-							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
-							 
-							 
-							 
-						
+						if($row["Active"] == 1)
+						{
+							echo "<tr><td>" .$row["ProductID"]. "</td>" .
+								 "<td>" . $row["ProductName"]. "</td>" .
+								 "<td>" .$row["Category"]. "</td>" .
+								 "<td>" .$row["Unit"]. "</td>" .
+								 "<td>" .$row["Price"]. "</td>" .
+								 "<td>" .$row["Stock"]. "</td>" .
+								 "<td>" .$row["ExpiryDate"]. "</td>" .
+								 "<td> <a  type ='button' class='btn btn-warning' href='edit-products.php?EditProductID=" .$row["ProductID"]."'><i class='fa fa-pencil fa-lg'></i></button></td>
+								 <td> <a  type ='button' class='btn btn-warning' href='delete-products.php?EditProductID=" .$row["ProductID"]."'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
+						}
 					  }
 					}
 

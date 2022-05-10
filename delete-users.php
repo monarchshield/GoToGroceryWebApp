@@ -9,10 +9,11 @@
         $query = "SELECT EXISTS(SELECT * from members WHERE MemberID = '$id')";
         $result = mysqli_query($connect, $query) or die("Unable to add member's record into Members table");
         if ($result != 0) {
-            $query = "DELETE FROM members WHERE MemberID = '$id'";
+            //$query = "DELETE FROM members WHERE MemberID = '$id'";
+			$query = "UPDATE members SET Active = 0 WHERE MemberID = '$id'";
             $result = mysqli_query($connect, $query) or die("Unable to add member's record into Members table");
             if ($result) {
-                echo "Successfully add member's details into Members Table";
+                echo "Successfully deactivated member";
 			    header('Location: Users.php');
             } else {
                 echo "Delete operation is failed";
