@@ -6,10 +6,10 @@
 
     if (isset($_POST["submit"])) 
     {
-        if (!empty($_POST["memberid"]) && !empty($_POST["address"]) && !empty($_POST["info"])) 
+        if (!empty($_POST["memberid"]) && !empty($_POST["info"])) 
         {
             $memberid = $_POST["memberid"];
-            $address = $_POST["address"];
+            // $address = $_POST["address"];
             $info= $_POST["info"];
             $time = date("Y-m-d H:i:s");
             $status = 'PENDING';
@@ -27,11 +27,7 @@
             }
 
         } else {
-            echo $_POST['address'];
             echo "All fields required";
         }
-    }
-    else{
-        echo "form not submitted correctly";
     }
 ?>
