@@ -29,9 +29,14 @@
 			$time = date("Y-m-d H:i:s");
 			$status = 'PENDING';
 			
+			
 			$query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info, Active) values('', '$time', '$status', '$info','1')";
 			$order_result = mysqli_query($conn, $query);
 			//$array = $order_result->fetch_assoc();
+			
+			
+			
+			
 			
 			
 			$last_id = $conn->insert_id;
@@ -63,7 +68,9 @@
 					},
 					success: function(data)
 					{
+						
 						//This is where we append the data to a list of some sort 
+						$("#ProductOrderItems").append(data);
 						alert(data);
 					}
 				});	
@@ -184,39 +191,7 @@
               </thead>
 
               <tbody id="ProductOrderItems">
-                <tr>
-				  <td> 5 </td>
-                  <td>Lettuce</td>
-                  <td>$3.5</td>
-                  <td>
-                    <button type="button" class="btn btn-dark ButtonNegative"> - </button>
-                    <span style="padding: 0px 5px;">6</span>
-                    <button type="button" class="btn btn-dark ButtonPositive"> + </button>
-                  </td>
-                  <td> <button class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-                </tr>
-                <tr>
-				  <td> 3 </td>
-                  <td>Egg</td>
-                  <td>$0.5</td>
-                  <td>
-                    <button type="button" class="btn btn-dark ButtonNegative"> - </button>
-                    <span style="padding: 0px 5px;">6</span>
-                    <button type="button" class="btn btn-dark ButtonPositive"> + </button>
-                  </td>
-                  <td> <button class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-                </tr>
-                <tr>
-				  <td> 2 </td>
-                  <td>Tomato</td>
-                  <td>$1</td>
-                  <td>
-                     <button type="button" class="btn btn-dark ButtonNegative"> - </button>
-					 <span style="padding: 0px 5px;">6</span>
-                     <button type="button" class="btn btn-dark ButtonPositive"> + </button>
-                  </td>
-                  <td> <button class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-                </tr>
+                
 
               </tbody>
             </table>

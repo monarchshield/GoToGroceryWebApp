@@ -1,7 +1,7 @@
 <?php
     $user = 'root';
     $pass = '';
-    $db = 'GoToGro';
+    $db = 'gtg';
     $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Unable to connect". $connect->connect_error);
 
     if (isset($_POST["submit"])) 
@@ -15,20 +15,27 @@
             $status = 'PENDING';
         
             //Write SQL query
-            $query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info) values('$memberid', '$time', '$status', '$info')";
+           
 			$update_query = "UPDATE Orders SET MemberID = $memberid, OrderTime = $time, OrderStatus = $status, Info = $info WHERE Orders = $orderid";
 			
-            $result = mysqli_query($connect, $query) or die("Unable to add order's record into Orders table");
+            $result = mysqli_query($connect, $update_query) or die("Unable to add order's record into Orders table");
             if ($result) {
-                echo "Successfully add order's details into Orders Table";
+                $connect->commit();
 				header('Location: orders.php');
 			
-            } else {
-                echo "Form unsuccessfully submitted";
+            } 
+			
+			else 
+			{
+                echo "Form unsuccessfully submitted";	
             }
 
-        } else {
-            echo "All fields required";
-        }
+        } 
+        echo "All fields required";
+        
+		
+		
+		header('Location: orders.php');
+		
     }
 ?>
