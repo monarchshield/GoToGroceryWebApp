@@ -71,7 +71,7 @@
 						
 						//This is where we append the data to a list of some sort 
 						$("#ProductOrderItems").append(data);
-						alert(data);
+						
 					}
 				});	
 			});
