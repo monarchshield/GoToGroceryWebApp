@@ -30,7 +30,14 @@
 			$status = 'PENDING';
 			
 			$query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info, Active) values('', '$time', '$status', '$info','1')";
-			$order_result = mysqli_query($conn, $query)
+			$order_result = mysqli_query($conn, $query);
+			//$array = $order_result->fetch_assoc();
+			
+			
+			$last_id = $conn->insert_id;
+			
+			
+
 	?>
 
 	<script type="text/javascript">
@@ -51,6 +58,7 @@
 					},
 					success: function(data)
 					{
+						//This is where we append the data to a list of some sort 
 						alert(data);
 					}
 				});	
@@ -98,9 +106,11 @@
           <h3 style="padding-bottom: 5%;">Billing details</h3>
          
 			 <div class="col-md-6 " style="padding: 0%;">
-				 <label for="orderID">Order ID</label>
-				 <input class="form-control invisible" type="text" name="orderID" id="orderID" placeholder="OrderID" value="hello" readonly>
-			 
+
+				 <?php echo  '<label for="orderID">Order ID: ' . $last_id. '</label>'; ?>
+				 <?php echo '<input class="form-control invisible" type="text" name="orderID" id="orderID" placeholder="OrderID" value="'.$last_id.'" readonly>'; ?>
+				 
+				
 			 </div>
 
 			 <div class="col-md-6" style="padding: 0%;">
