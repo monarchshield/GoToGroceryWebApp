@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4000
--- Generation Time: May 10, 2022 at 04:47 AM
+-- Generation Time: May 10, 2022 at 05:52 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -130,6 +130,13 @@ CREATE TABLE `orders` (
   `Active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`OrderID`, `MemberID`, `OrderTime`, `OrderStatus`, `Info`, `Active`) VALUES
+(1, 11, '2022-05-09 19:22:40', 'PENDING', 'Information blah blah blah', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -155,7 +162,37 @@ INSERT INTO `products` (`ProductID`, `ProductName`, `Category`, `Unit`, `Price`,
 (1, 'Beef', 'Meat', 'Kg', 15, 50, '2022-05-15', 1),
 (2, 'Chicken', 'Meat', 'Kg', 25, 30, '2022-05-15', 0),
 (3, 'Cheese', 'Vegetable', 'each', 10, 15, '2022-05-29', 1),
-(4, 'WerkQueen', 'Fruit', 'Head', 5, 15, '2022-06-24', 0);
+(4, 'WerkQueen', 'Fruit', 'Head', 5, 15, '2022-06-24', 0),
+(1001, 'Milk', 'Dairy', '1 Litre', 4, 30, '2022-04-30', 0),
+(1002, 'Milk', 'Dairy', '2 Litre', 4, 30, '2022-04-30', 0),
+(1003, 'Almond Milk', 'Dairy', '1 Litre', 4, 40, '2022-04-30', 0),
+(1004, 'Tasty Cheese Slices', 'Dairy', '500 Grams', 7, 25, '2022-05-04', 0),
+(1005, 'Shredded Mozarella', 'Dairy', '500 Grams', 6, 35, '2022-05-06', 0),
+(1006, 'Vanilla Yoghurt', 'Dairy', '1 Kilogram', 6, 35, '2022-05-11', 0),
+(1007, 'Strawberry Yoghurt', 'Dairy', '1 Kilogram', 8, 20, '2022-05-12', 0),
+(1008, 'Blueberry Yoghurt', 'Dairy', '1 Kilogram', 8, 20, '2022-05-05', 0),
+(1009, 'Butter', 'Dairy', '500 Grams', 4, 50, '2022-07-07', 0),
+(1010, 'Apples', 'Fruit', '1 Kilogram', 2, 100, '2022-05-05', 0),
+(1011, 'Oranges', 'Fruit', '1 Kilogram', 3, 90, '2022-05-05', 0),
+(1012, 'Lemons', 'Fruit', '1 Kilogram', 2, 50, '2022-05-05', 0),
+(1013, 'Mangoes', 'Fruit', '1 Kilogram', 6, 80, '2022-05-05', 0),
+(1014, 'Bananas ', 'Fruit', '1 Kilogram', 2, 200, '2022-05-06', 0),
+(1015, 'Tomatoes ', 'Fruit', '1 Kilogram', 4, 200, '2022-05-05', 0),
+(1016, 'Spinach', 'Vegetables', '500 Grams', 3, 50, '0000-00-00', 0),
+(1017, 'Potatoes', 'Vegetables', '1 Kilogram', 5, 60, '0000-00-00', 0),
+(1018, 'Onions', 'Vegetables', '1 Kilogram', 4, 80, '0000-00-00', 0),
+(1019, 'Carrots', 'Vegetables', '1 Kilogram', 3, 100, '0000-00-00', 0),
+(1020, 'Celery', 'Vegetables', '1 Kilogram', 4, 90, '0000-00-00', 0),
+(1021, 'Broccoli', 'Vegetables', '1 Kilogram', 3, 70, '0000-00-00', 0),
+(1022, 'Mushrooms', 'Vegetables', '1 Kilogram', 7, 200, '0000-00-00', 0),
+(1023, 'Lettuce', 'Vegetables', '1 Kilogram', 6, 100, '0000-00-00', 0),
+(1024, 'Beef Mince', 'Meat', '500 Grams', 9, 30, '0000-00-00', 0),
+(1025, 'Pork Mince', 'Meat', '500 Grams', 9, 30, '0000-00-00', 0),
+(1026, 'Chicken Breast', 'Meat', '500 Grams', 10, 20, '0000-00-00', 0),
+(1027, 'Chicken Thigh', 'Meat', '500 Grams', 10, 20, '0000-00-00', 0),
+(1028, 'Penne Pasta', 'Pantry', '500 Grams', 4, 30, '0000-00-00', 0),
+(1029, 'White Rice', 'Pantry', '500 Grams', 5, 30, '0000-00-00', 0),
+(1030, 'Brown Rice', 'Pantry', '500 Grams', 6, 30, '0000-00-00', 0);
 
 --
 -- Indexes for dumped tables
@@ -216,13 +253,13 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `OrderID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ProductID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1031;
 
 --
 -- Constraints for dumped tables
