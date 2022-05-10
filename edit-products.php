@@ -48,10 +48,8 @@
 	 <?php 
 		
 		
-		
-		
 		// Create connection
-		$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
+		$conn = new mysqli('localhost', 'root', '', 'gtg');
 
 		// Check connection
 		if ($conn->connect_error) {

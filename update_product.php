@@ -2,7 +2,7 @@
     $user = 'root';
     $pass = '';
     $db = 'gtg';
-    $connect = mysqli_connect('localhost:4000', $user, $pass, $db) or die("Unable to connect");
+    $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Unable to connect");
     if (isset($_POST["submit"])) {
         if (!empty($_POST["p_name"]) && !empty($_POST["p_price"]) && !empty($_POST["p_stock"]) && !empty($_POST["p_expiry"]) && !empty($_POST["p_unit"]) && !empty($_POST["p_category"])) {
            
