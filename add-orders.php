@@ -45,8 +45,8 @@
 					url: "./scripts/insert_product_orders.php",
 					data: 
 					{
-						'productid': '1', 
-						'orderid':'3'
+						'productid': '10', 
+						'orderid':'2'
 						
 					},
 					success: function(data)
