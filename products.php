@@ -175,7 +175,9 @@
 			</div>
 		</div>
 	</div>
-
+	<form method = "post" class="container" style="padding-top: 3%" action = "export_products.php">
+        <input type = "submit" name = "export" value = "Export CSV file" class="btn btn-outline-primary"/>
+    </form>
 	<div class="container d-flex justify-content-center" style="padding-top: 3%;">
 		<nav aria-label="Page navigation example">
 			<ul class="pagination">
