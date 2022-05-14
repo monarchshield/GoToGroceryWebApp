@@ -156,6 +156,9 @@
 				</tbody>
 			</table>
 		</div>
+		<form method = "post" class="col-md-6 pl-0" action = "export_orders.php">
+            <input type = "submit" name = "export_orders" value = "Export CSV file" class="btn btn-outline-primary"/>
+        </form>
 	</div>
 
 	<div class="row" style="padding-top:1%;">
