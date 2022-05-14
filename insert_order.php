@@ -11,16 +11,54 @@
             $memberid = $_POST["memberid"];
             // $address = $_POST["address"];
             $info= $_POST["info"];
-            $time = date("Y-m-d H:i:s");
-            $status = 'PENDING';
+            $time = date("Y-m-d");
+            $status = "PENDING";
         
+			$orderid = $_POST["orderID"];
+		
             //Write SQL query
            
-			$update_query = "UPDATE Orders SET MemberID = $memberid, OrderTime = $time, OrderStatus = $status, Info = $info WHERE Orders = $orderid";
+			$update_query = 
+			"UPDATE orders 
+			SET MemberID = $memberid, 
+			OrderTime = $time, 
+			OrderStatus = '$status', 
+			Info = '$info' 
+			WHERE OrderID = $orderid";
 			
-            $result = mysqli_query($connect, $update_query) or die("Unable to add order's record into Orders table");
+			
+			
+			
+			$updateorderitems = 
+			"SELECT ProductID, Quantity 
+			FROM orderitems 
+			WHERE OrderID = $orderid";
+			
+			
+			
+			$result = $connect->query($updateorderitems) or die("Failed");
+			
+				while($row = $result->fetch_assoc())
+				{
+					
+					$productid = $row['ProductID'];
+					$productidqty = $_POST[$productid];
+					
+					
+					$update_productitem = "UPDATE orderitems SET Quantity = $productidqty WHERE OrderID = $orderid AND ProductID = $productid";
+					$orderitemresult = $connect->query($update_productitem) or die("Failed: " . $update_productitem);
+				
+				}
+			
+			
+			
+			
+			
+			
+			
+            $result = mysqli_query($connect, $update_query) or die("Unable to add order's record into Orders table: " . $update_query);
             if ($result) {
-                $connect->commit();
+               
 				header('Location: orders.php');
 			
             } 

@@ -9,7 +9,7 @@
  <script  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
    <?php
-			$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
+			$conn = new mysqli('localhost', 'root', '', 'gtg');
 			if ($conn->connect_error) {
 			  die("Connection failed: " . $conn->connect_error);
 			}
@@ -34,11 +34,7 @@
 			$order_result = mysqli_query($conn, $query);
 			//$array = $order_result->fetch_assoc();
 			
-			
-			
-			
-			
-			
+
 			$last_id = $conn->insert_id;
 			
 			
@@ -128,9 +124,9 @@
 			 <div class="col-md-6" style="padding: 0%;">
 				<lable for="memberid">User ID</label>
 
-					<select class="custom-select overflow-auto" name="memberid" id="memberid" style="margin: 2% 0 2% 0;">
-					  <option selected>Open this select menu</option>
-				   
+					<select class="custom-select overflow-auto" name="memberid" id="memberid" style="margin: 2% 0 2% 0;" required>
+					  <option value="" selected>Open this select menu</option>
+						
 					   <?php
 						  while($row = $member_result->fetch_assoc())
 						  {
@@ -146,7 +142,7 @@
           </div>
           <div class="col" style="padding: 0%;">
             <label for="info" style="padding: 2% 0%;">Additional Information</label>
-            <input class="form-control" type="text" name="info" id="info" placeholder="Note" style="height:30%">
+            <input class="form-control" type="text" name="info" id="info" placeholder="Note" style="height:30%" required>
           </div>
         </div>
         <div class="col-md-6" style="padding: 0% 3%;">
