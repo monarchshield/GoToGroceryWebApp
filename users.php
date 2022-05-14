@@ -16,7 +16,7 @@
 	</script>
 
 	<script type="text/javascript">
-		function getUserData(id, fname, lname, pnum, email, joindate) 
+		function getUserData(id, fname, lname, pnum, email, joindate)
 		{
 			sessionStorage.editUserId = id;
 			sessionStorage.editFName = fname;
@@ -26,13 +26,15 @@
 			sessionStorage.editJoinDate = joindate;
 		}
 
-		function storeDeleteMember(id) 
+		function storeDeleteMember(id)
 		{
 			sessionStorage.getID = id;
 			confirm("Are you sure to delete a member ?");
 		}
 
-		
+
+
+
 	</script>
 </head>
 
@@ -98,7 +100,7 @@
 				<?php
 
 					// Create connection
-					$conn = new mysqli('localhost', 'root', '', 'gtg');
+					$conn = new mysqli('localhost', 'root', '', 'GoToGro');
 
 					// Check connection
 					if ($conn->connect_error) {
