@@ -64,19 +64,49 @@
 
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>User ID</th>
-						<th>Total</th>
+						<th>Order ID</th>
+						<th>Member ID</th>
 						<th>Date</th>
 						<th>Status</th>
-						<th>Address</th>
-						<th>Order Info</th>
 						<th>Edit</th>
 						<th>Delete</th>
 					</tr>
 				</thead>
 
 				<tbody>
+
+					<?php
+
+					// Create connection
+					$conn = new mysqli('localhost', 'root', '', 'gtg');
+
+					// Check connection
+					if ($conn->connect_error) {
+					  die("Connection failed: " . $conn->connect_error);
+					}
+					//echo "Connected successfully";
+
+					$sql = "SELECT OrderID, MemberID, OrderTime, OrderStatus FROM orders";
+					$result = $conn->query($sql);
+
+
+
+					if ($result->num_rows > 0) {
+					  // output data of each row
+					  while($row = $result->fetch_assoc())
+					  {
+
+						echo "<tr><td>" .$row["OrderID"]. "</td>" .
+							 "<td>" . $row["MemberID"]. "</td>" .
+							 "<td>" .$row["OrderTime"]. "</td>" .
+							 "<td>" .$row["OrderStatus"]. "</td>" .
+							 "<td> <button  class='btn btn-warning'> <i class='fa fa-pencil fa-lg'></i></button></td>
+							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
+					  }
+					}
+
+					?>
+					<!--
 					<tr>
 						<td>1</td>
 						<td>5</td>
@@ -122,6 +152,7 @@
 						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
 						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
 					</tr>
+-->
 				</tbody>
 			</table>
 		</div>
