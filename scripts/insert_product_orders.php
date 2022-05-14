@@ -10,7 +10,7 @@
 	
 	if(!empty($_POST['productid']) && !empty($_POST['orderid']))
 	{
-		$conn = new mysqli('localhost:4000', 'root', '', 'gtg');
+		$conn = new mysqli('localhost', 'root', '', 'gtg');
 		$query = "INSERT INTO orderitems(OrderID, ProductID, Quantity) values('$order_id', '$product_id', '0')";
 		$order_result = mysqli_query($conn, $query);
 		
