@@ -4,16 +4,46 @@
     $db = 'gtg';
     $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Unable to connect");
     if (isset($_POST["submit"])) {
-        if (!empty($_POST["memberid"])) {
+        if (!empty($_POST["memberid"]) && !empty($_POST["info"])) {
            
-			$id = $_POST["orderID"];
-			$o_memberid = $_POST["memberid"];
+			$orderid = $_POST["orderID"];
+			$memberid = $_POST["memberid"];
+            $info= $_POST["info"];
+            $time = date("Y-m-d");
 
             //Write SQL query
-            $query = "UPDATE products SET MemberID='$o_memberid' WHERE OrderID = '$id'";
-           
 			
-			echo $query;
+            $update_query = 
+			"UPDATE orders 
+			SET MemberID = $memberid, 
+			OrderTime = $time, 
+			OrderStatus = '$status', 
+			Info = '$info' 
+			WHERE OrderID = $orderid";
+			
+			
+			
+			
+			$updateorderitems = 
+			"SELECT ProductID, Quantity 
+			FROM orderitems 
+			WHERE OrderID = $orderid";
+			
+			
+			
+			$result = $connect->query($updateorderitems) or die("Failed");
+			
+				while($row = $result->fetch_assoc())
+				{
+					
+					$productid = $row['ProductID'];
+					$productidqty = $_POST[$productid];
+					
+					
+					$update_productitem = "UPDATE orderitems SET Quantity = $productidqty WHERE OrderID = $orderid AND ProductID = $productid";
+					$orderitemresult = $connect->query($update_productitem) or die("Failed: " . $update_productitem);
+				
+				}
 			
 			
 			
