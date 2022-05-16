@@ -100,7 +100,7 @@
 							 "<td>" . $row["MemberID"]. "</td>" .
 							 "<td>" .$row["OrderTime"]. "</td>" .
 							 "<td>" .$row["OrderStatus"]. "</td>" .
-							 "<td> <button  class='btn btn-warning' href='edit-orders.php?EditOrderID=" .$row["OrderID"]."'> <i class='fa fa-pencil fa-lg'></i></button></td>
+							 "<td> <a type='button'  class='btn btn-warning' href='edit-orders.php?EditOrderID=" .$row["OrderID"]. "'> <i class='fa fa-pencil fa-lg'></i></a></td>
 							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
 					  }
 					}
