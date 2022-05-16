@@ -100,59 +100,13 @@
 							 "<td>" . $row["MemberID"]. "</td>" .
 							 "<td>" .$row["OrderTime"]. "</td>" .
 							 "<td>" .$row["OrderStatus"]. "</td>" .
-							 "<td> <button  class='btn btn-warning'> <i class='fa fa-pencil fa-lg'></i></button></td>
+							 "<td> <button  class='btn btn-warning' href='edit-orders.php?EditOrderID=" .$row["OrderID"]."'> <i class='fa fa-pencil fa-lg'></i></button></td>
 							 <td> <button  class='btn btn-warning'> <i class='fa fa-trash-o fa-lg'></i></button></td></tr>";
 					  }
 					}
 
 					?>
-					<!--
-					<tr>
-						<td>1</td>
-						<td>5</td>
-						<td>$25.00</td>
-						<td>01/01/20</td>
-						<td>Paid</td>
-						<td>8 Honeyeater Crescent</td>
-						<td>LOREM</td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-					</tr>
 
-					<tr>
-						<td>2</td>
-						<td>10</td>
-						<td>$150.00</td>
-						<td>03/03/19</td>
-						<td>Waiting</td>
-						<td>15 Lincoln Drive</td>
-						<td>LOREM</td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>3</td>
-						<td>$75.00</td>
-						<td>03/01/19</td>
-						<td>Delivered</td>
-						<td>23 Pacer Street</td>
-						<td>LOREM</td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>9</td>
-						<td>$125.00</td>
-						<td>05/09/19</td>
-						<td>Fail</td>
-						<td>19 Hillside Court</td>
-						<td>LOREM</td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-pencil fa-lg"></i></button></td>
-						<td> <button  class="btn btn-warning"> <i class="fa fa-trash-o fa-lg"></i></button></td>
-					</tr>
--->
 				</tbody>
 			</table>
 		</div>
