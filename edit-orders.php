@@ -108,7 +108,7 @@
 
   <div class="container" style="padding-top:5%;">
   
-    <form action = "update_order.php" method="post">
+    <form action = "update_orders.php" method="post">
       <div class="form-row py-3">
         <div class="col-md-6" style="padding: 0% 3%;">
           <h3 style="padding-bottom: 5%;">Billing details</h3>
