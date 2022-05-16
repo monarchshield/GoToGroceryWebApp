@@ -27,7 +27,13 @@
 			
 			$info= '';
 			$time = date("Y-m-d H:i:s");
-			$status = 'PENDING';
+            echo $_GET['EditOrderID'];
+            $sql = "SELECT OrderStatus FROM Orders WHERE OrderID = " . $GET["EditOrderID"];
+			$order_result = $conn->query($sql);
+
+            $row = $order_result->fetch_assoc();
+
+            $status = $row['OrderStatus'];
 			
 			
 			$query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info, Active) values('', '$time', '$status', '$info','1')";
@@ -35,7 +41,7 @@
 			//$array = $order_result->fetch_assoc();
 			
 
-			$last_id = $conn->insert_id;
+			$last_id = $_GET["EditOrderID"];
 			
 			
 
