@@ -6,12 +6,12 @@
 
     if (isset($_POST["submit"])) 
     {
-        if (!empty($_POST["memberid"]) && !empty($_POST["info"])) 
+        if (!empty($_POST["memberid"])) 
         {
             $memberid = $_POST["memberid"];
             // $address = $_POST["address"];
             $info= $_POST["info"];
-            $time = date("Y-m-d");
+            $time = date("Y-m-d H:i:s");
             $status = "PENDING";
         
 			$orderid = $_POST["orderID"];
@@ -21,7 +21,7 @@
 			$update_query = 
 			"UPDATE orders 
 			SET MemberID = $memberid, 
-			OrderTime = $time, 
+			OrderTime = '$time', 
 			OrderStatus = '$status', 
 			Info = '$info' 
 			WHERE OrderID = $orderid";

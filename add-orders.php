@@ -142,7 +142,7 @@
           </div>
           <div class="col" style="padding: 0%;">
             <label for="info" style="padding: 2% 0%;">Additional Information</label>
-            <input class="form-control" type="text" name="info" id="info" placeholder="Note" style="height:30%" required>
+            <input class="form-control" type="text" name="info" id="info" placeholder="Note" style="height:30%" >
           </div>
         </div>
         <div class="col-md-6" style="padding: 0% 3%;">

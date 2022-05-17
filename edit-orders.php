@@ -25,18 +25,18 @@
 			
 			
 			
-			$info= '';
-			$time = date("Y-m-d H:i:s");
-            $sql = "SELECT MemberID, OrderStatus, Info FROM Orders WHERE OrderID = " . $_GET['EditOrderID'];
+			// $info= '';
+			// $time = date("Y-m-d H:i:s");
+      $sql = "SELECT MemberID, OrderStatus, Info FROM Orders WHERE OrderID = " . $_GET['EditOrderID'];
 			$order_result = $conn->query($sql);
 
-            $row = $order_result->fetch_assoc();
+      $row = $order_result->fetch_assoc();
 
-            $status = $row['OrderStatus'];
+      $status = $row['OrderStatus'];
 			
 			
-			$query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info, Active) values('', '$time', '$status', '$info','1')";
-			$order_result = mysqli_query($conn, $query);
+			// $query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info, Active) values('', '$time', '$status', '$info','1')";
+			// $order_result = mysqli_query($conn, $query);
 			//$array = $order_result->fetch_assoc();
 			
 
@@ -113,7 +113,7 @@
 
   <div class="container" style="padding-top:5%;">
   
-    <form action = "insert_orders.php" method="post">
+    <form action = "update_orders.php" method="post">
       <div class="form-row py-3">
         <div class="col-md-6" style="padding: 0% 3%;">
           <h3 style="padding-bottom: 5%;">Billing details</h3>
@@ -147,7 +147,7 @@
           </div>
           <div class="col" style="padding: 0%;">
             <label for="info" style="padding: 2% 0%;">Additional Information</label>
-            <?php echo '<input type="text" name="info" class="form-control" id="info" value='.$row["Info"].'>'; ?>
+            <input class="form-control" type="text" name="info" id="info" placeholder="Note" style="height:30%" >
           </div>
         </div>
         <div class="col-md-6" style="padding: 0% 3%;">
