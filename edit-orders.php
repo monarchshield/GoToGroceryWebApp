@@ -32,7 +32,9 @@
 
       $row = $order_result->fetch_assoc();
 
-      $status = $row['OrderStatus'];
+      $sql = "SELECT FirstName, LastName FROM members WHERE MemberID = " . $row['MemberID'];
+      $editmember_res = $conn->query($sql)->fetch_assoc();
+      // $status = $row['OrderStatus'];
 			
 			
 			// $query = "INSERT INTO Orders(MemberID, OrderTime, OrderStatus, Info, Active) values('', '$time', '$status', '$info','1')";
@@ -122,9 +124,23 @@
 
 				 <?php echo  '<label for="orderID">Order ID: ' . $last_id. '</label>'; ?>
 				 <?php echo '<input class="form-control invisible" type="text" name="orderID" id="orderID" placeholder="OrderID" value="'.$last_id.'" readonly>'; ?>
-				 
 				
 			 </div>
+
+       <div class="col-md-6 " style="padding: 0%;">
+       <lable for="status">Order Status</label>
+
+          <select class="custom-select overflow-auto" name="status" id="status" style="margin: 2% 0 2% 0;" required>
+            
+            <?php
+              echo "<option selected value=\"" .$row['OrderStatus']. "\">" .$row['OrderStatus']. "</option>";
+            ?>
+            <option value="PAID">PAID</option>
+            <option value="PENDING">PENDING</option>
+            <option value="FAIL">FAIL</option>
+          </select>
+
+       </div>
 
 			 <div class="col-md-6" style="padding: 0%;">
 				<lable for="memberid">User ID</label>
@@ -132,7 +148,7 @@
 					<select class="custom-select overflow-auto" name="memberid" id="memberid" style="margin: 2% 0 2% 0;" required>
 						
 					   <?php
-                        echo '<option selected>' . $row["MemberID"]. '</option>';
+              echo "<option selected value=\"" .$row['MemberID']. "\">" .$row['MemberID']. ' ' .$editmember_res['FirstName'].' '.$editmember_res['LastName']. "</option>";
 						  while($row = $member_result->fetch_assoc())
 						  {
 							echo "<option value=\"" .$row['MemberID']. "\">" .$row['MemberID']. ' ' .$row['FirstName'].' '.$row['LastName']. "</option>";

@@ -4,7 +4,7 @@
     $db = 'gtg';
     $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Unable to connect". $connect->connect_error);
 
-    if (isset($_POST["submit"])) 
+    if (isset($_POST["submit"]) && isset($_POST["status"])) 
     {
         if (!empty($_POST["memberid"])) 
         {
@@ -12,7 +12,7 @@
             // $address = $_POST["address"];
             $info= $_POST["info"];
             $time = date("Y-m-d H:i:s");
-            $status = "PENDING";
+            $status = $_POST["status"];
         
 			$orderid = $_POST["orderID"];
 		
