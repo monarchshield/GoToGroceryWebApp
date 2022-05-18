@@ -1,7 +1,7 @@
 <?php
     $user = 'root';
     $pass = '';
-    $db = 'GoToGro';
+    $db = 'gtg';
     $connect = mysqli_connect('localhost', $user, $pass, $db) or die("Unable to connect");
     if (isset($_POST["submit"])) {
         if (!empty($_POST["fname"]) && !empty($_POST["lname"]) && !empty($_POST["join_date"]) && !empty($_POST["phone_number"]) && !empty($_POST["email"]) && !empty($_POST["address"])) {

@@ -100,7 +100,7 @@
 				<?php
 
 					// Create connection
-					$conn = new mysqli('localhost', 'root', '', 'GoToGro');
+					$conn = new mysqli('localhost', 'root', '', 'gtg');
 
 					// Check connection
 					if ($conn->connect_error) {
