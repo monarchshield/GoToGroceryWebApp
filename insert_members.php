@@ -13,7 +13,7 @@
             $address = $_POST["address"];
             
             //Write SQL query
-            $query = "INSERT INTO members(FirstName, LastName, JoinDate, Email, Address, PhoneNum) values('$fname', '$lname', '$join_date', '$email', '$address', '$phone_num')";
+            $query = "INSERT INTO members(FirstName, LastName, JoinDate, Email, Address, PhoneNum, Active) values('$fname', '$lname', '$join_date', '$email', '$address', '$phone_num','1')";
             $result = mysqli_query($connect, $query) or die("Unable to add member's record into Members table" );
             if ($result) {
                 echo "Successfully add member's details into Members Table";

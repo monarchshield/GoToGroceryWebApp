@@ -13,7 +13,7 @@
 			$category = $_POST["p_category"];
             
             //Write SQL query
-            $query = "INSERT INTO products(ProductName, Category, Unit, Price, Stock, ExpiryDate) values('$productname', '$category', '$unit', '$price', '$stock', '$expiry')";
+            $query = "INSERT INTO products(ProductName, Category, Unit, Price, Stock, ExpiryDate, Active) values('$productname', '$category', '$unit', '$price', '$stock', '$expiry', '1')";
             echo $query;
 			
 			
